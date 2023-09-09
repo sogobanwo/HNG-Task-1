@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNG Task 1</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <section class="container">
+        <div>
+            <img src="./Assets/Olorunsogo.jpg" alt="Olorunsogo" data-testid="slackDisplayImage" class="slackImage"/>
+            <h1>Slack Display Picture</h1>
+        </div>
+        <div>
+            <h1>Slack Name:</h1>
+            <h2 data-testid="slackUserName">Banwo Olorunsogo</h2>
+        </div>
+        <div>
+            <h1>Current Day of the Week:</h1>
+            <h2 data-testid="currentDayOfTheWeek">Monday</h2>
+        </div>
+        <div>
+            <h1>Current UTC Time:</h1>
+            <h2 data-testid="currentUTCTime">Monday</h2>
+        </div>
+        <div>
+            <h1>Track:</h1>
+            <h2 data-testid="myTrack">Frontend</h2>
+        </div>
+         <div>
+            <h1>GitHub URL:</h1>
+            <h2 data-testid="githubURL"><a href="https://github.com/sogobanwo/HNG-Task-1" >My Github URL</h2>
+        </div>
+    </section>
+    
+</body>
+ <script>
+        const time = (new Date().getUTCHours() + 1) + ":" + new Date().getUTCMinutes() + ":" + new Date().getUTCSeconds()
+        const currentDayOfTheWeek = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+        const currentUTCTime = document.querySelector('[data-testid="currentUTCTime"]');
+        currentDayOfTheWeek.innerHTML = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+        currentUTCTime.innerHTML = time
+        const currentTimeZoneOffsetInMinutes = new Date().getTimezoneOffset();
+        const currentTimeZoneOffsetInMilliseconds = currentTimeZoneOffsetInMinutes * 60 * 1000;
+    </script>
+</html>
